@@ -1,11 +1,7 @@
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from apscheduler.triggers.date import DateTrigger
-from datetime import datetime, timedelta
-from .tasks.inserta_on_db import insertDataOnDb
+from application.jobs.tasks.inserta_on_db import insertDataOnDb
 
 def start_scheduler():
     scheduler = AsyncIOScheduler()
-    run_time = datetime.now() + timedelta(seconds=10)  
-
-    scheduler.add_job(insertDataOnDb, DateTrigger(run_date=run_time)) 
+    scheduler.add_job(insertDataOnDb, 'interval', seconds=30)  # Exemplo: rodar a cada 30 segundos
     scheduler.start()

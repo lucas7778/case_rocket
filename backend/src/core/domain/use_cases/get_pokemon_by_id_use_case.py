@@ -1,16 +1,16 @@
 from typing import Dict, Any
-from services.ipokemon import IPokemon
-from repositories.irpokemon import IRPokemon
+from ...services.ipokemon import IPokemon
+from ...repositories.irpokemon import IRPokemon
 from ..entities import pokemon
 
 
-class GetPokomonsByIdUseCase: 
+class GetPokemonsByIdUseCase: 
     
-     def __init__(self, ipokemon: IPokemon, pokemon_repository: IRPokemon ) -> Dict[str]:
+     def __init__(self, ipokemon: IPokemon, pokemon_repository: IRPokemon ) -> None:
         self._ipokemon = ipokemon
         self._pokemon_repository = pokemon_repository
 
-     async def execute(self, input: Dict[str]):
+     async def execute(self, input: Dict[str, Any]) -> Dict[str, Any]:
         pokemon_id =  input["id"]
         
         pokemon_by_id =  await self.pokemon_repository.get_pokemon_by_id(pokemon_id)

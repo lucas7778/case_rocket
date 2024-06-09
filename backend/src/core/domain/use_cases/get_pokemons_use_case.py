@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from repositories.irpokemon import IRPokemon
+from ...repositories.irpokemon import IRPokemon
 
 class GetPokemonsUseCase:
     

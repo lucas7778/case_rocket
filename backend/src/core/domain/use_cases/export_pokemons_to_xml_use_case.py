@@ -1,5 +1,5 @@
 from typing import Any, Dict
-from repositories.irpokemon import IRPokemon
+from ...repositories.irpokemon import IRPokemon
 from utils.xml_generator import generate_pokemon_xml
 from aiocache import cached
 

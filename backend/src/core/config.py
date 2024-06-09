@@ -6,10 +6,10 @@ class Config:
     Configuration class for managing environment variables.
     """
 
-    POSTGRES_USER = os.environ["POSTGRES_USER"]
-    POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
-    POSTGRES_DB = os.environ["POSTGRES_DB"]
-    DATABASE_URL = os.environ["DATABASE_URL"]
+    POSTGRES_USER="user"
+    POSTGRES_PASSWORD=123
+    POSTGRES_DB="pokedex"
+    DATABASE_URL = f"postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@db/{POSTGRES_DB}"
 
 
 class Routes:
