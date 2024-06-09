@@ -1,0 +1,8 @@
+[tool.project-metadata]
+name = "Case-Rocket"
+version = "1.0.0"
+python = "3.12"
+packages = ["fastapi", "uvicorn", "pydantic", "SQLAlchemy", "psycopg2-binary",]
+
+[tool.isort]
+known_first_party = "api, core"

@@ -1,0 +1,4 @@
+FROM postgres:latest
+
+# Postgres runs scripts in alphabetical order, so we need to name the scripts accordingly
+COPY init.sql /docker-entrypoint-initdb.d/01-init.sql
